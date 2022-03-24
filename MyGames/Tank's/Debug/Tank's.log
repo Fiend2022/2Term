@@ -1,0 +1,27 @@
+﻿  Source.c
+C:\Users\Илья\source\repos\MyGames\Tank's\Source.c(14,18): warning C4244: функция: преобразование "time_t" в "unsigned int", возможна потеря данных
+  TankLib.c
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(50,34): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(51,62): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(57,33): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(58,61): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(64,34): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(65,62): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(71,33): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(72,61): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(77,62): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(104,34): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(105,63): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(111,33): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(112,62): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(118,34): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(119,63): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(125,33): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(126,62): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(131,63): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(173,71): warning C4244: функция: преобразование "float" в "int", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(173,111): warning C4244: функция: преобразование "float" в "int", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(213,37): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Илья\source\repos\MyGames\Tank's\TankLib.c(214,37): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+  Создание кода...
+  Tank's.vcxproj -> C:\Users\Илья\source\repos\MyGames\Debug\Tank's.exe

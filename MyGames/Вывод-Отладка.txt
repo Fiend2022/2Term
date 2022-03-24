@@ -1,0 +1,83 @@
+﻿"Tank's.exe" (Win32). Загружено "C:\Users\Илья\source\repos\MyGames\Debug\Tank's.exe". Символы загружены.
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\ntdll.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\kernel32.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\KernelBase.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Users\Илья\source\repos\MyGames\Debug\raylib.dll". Символы загружены.
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\user32.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\win32u.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\gdi32.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\gdi32full.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\msvcp_win.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\ucrtbase.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\shell32.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\vcruntime140d.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\ucrtbased.dll". Символы загружены.
+"Tank's.exe" (Win32). Выгружено "C:\Windows\SysWOW64\ucrtbased.dll"
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\winmm.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\msvcrt.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\ucrtbased.dll". Символы загружены.
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\imm32.dll". 
+Поток 0x3bc4 завершился с кодом 0 (0x0).
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\uxtheme.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\combase.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\rpcrt4.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\dinput8.dll". 
+"Tank's.exe" (Win32). Выгружено "C:\Windows\SysWOW64\dinput8.dll"
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\dinput8.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\advapi32.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\sechost.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\XInput1_4.dll". 
+"Tank's.exe" (Win32). Выгружено "C:\Windows\SysWOW64\XInput1_4.dll"
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\XInput1_4.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\cfgmgr32.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\devobj.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\dwmapi.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\InputHost.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\SHCore.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\CoreMessaging.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\oleaut32.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\WinTypes.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\ws2_32.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\propsys.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\bcryptprimitives.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\CoreUIComponents.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\kernel.appcore.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\ntmarta.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\kernel.appcore.dll". 
+"Tank's.exe" (Win32). Выгружено "C:\Windows\SysWOW64\kernel.appcore.dll"
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\msctf.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\hid.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\setupapi.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\bcrypt.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\wintrust.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\crypt32.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Program Files (x86)\Common Files\Crypto Pro\AppCompat\cpcrypt.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Program Files (x86)\Common Files\Crypto Pro\AppCompat\detoured.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\psapi.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\msasn1.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\opengl32.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\glu32.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\clbcatq.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\AppXDeploymentClient.dll". 
+"Tank's.exe" (Win32). Выгружено "C:\Windows\SysWOW64\AppXDeploymentClient.dll"
+"Tank's.exe" (Win32). Загружено "C:\Windows\System32\DriverStore\FileRepository\u0364341.inf_amd64_c22b73fb0c3a32d3\B364190\atiglpxx.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\System32\DriverStore\FileRepository\u0364341.inf_amd64_c22b73fb0c3a32d3\B364190\atioglxx.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\ole32.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\version.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\dxva2.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\System32\DriverStore\FileRepository\u0364341.inf_amd64_c22b73fb0c3a32d3\B364190\atigktxx.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\atiadlxy.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\windows.storage.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\wldp.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\shlwapi.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\DXCore.dll". 
+"Tank's.exe" (Win32). Загружено "C:\Windows\SysWOW64\TextInputFramework.dll". 
+Поток 0x22a0 завершился с кодом 0 (0x0).
+Поток 0x7ec завершился с кодом 0 (0x0).
+Поток 0x3fe8 завершился с кодом 0 (0x0).
+Поток 0x15ac завершился с кодом 0 (0x0).
+Поток 0x3c58 завершился с кодом 0 (0x0).
+Поток 0x37b4 завершился с кодом 0 (0x0).
+Поток 0x3438 завершился с кодом 0 (0x0).
+Поток 0x2e28 завершился с кодом 0 (0x0).
+Программа "[4480] Tank's.exe" завершилась с кодом 0 (0x0).
