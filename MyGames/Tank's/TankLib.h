@@ -15,10 +15,17 @@
 #define FIELDWIDHT 900
 #define FIELDHEIGHT 600
 #define HEALTH 5
-static int IndexOfBullFirstPlayer = 0;
-static int IndexOfBullSecondPlayer = 0;
 
-typedef struct Object
+typedef struct KEY_MOVE
+{
+	int Up;
+	int Down;
+	int Left;
+	int Right;
+	int Fire;
+}KEY_MOVE;
+
+typedef struct Tank
 {
 	Vector2 Position;
 	Vector2 Speed;
@@ -28,8 +35,10 @@ typedef struct Object
 	bool CanShoot;
 	bool CanMove;
 	int Clip;
+	KEY_MOVE Move;
+	unsigned short IndexOfBull;
 	unsigned short int HP;
-} Tank,  Object;
+} Tank;
 
 typedef struct Bullet
 {
@@ -49,11 +58,10 @@ typedef struct Ammunition
 
 void BulletMove(Bullet* Obj);
 void PlayersAction(Tank* Player, Texture2D* Direction, Bullet* Bullet);
-void ObjectInit(Object* Obj, float SpeedX, float SpeedY, float PosX, float PosY, char Type);
 void TankMove(Tank* Obj);
 void Recharge(Tank* Player, Ammunition* Box);
 void BulletFlight(Bullet* Bullet, Tank Player, int Num);
-Tank PlayerInit(int X, int Y, char Type, char* File, float, float);
+Tank PlayerInit(int X, int Y, char Type, char* File, float, float, int Up, int Down, int Left, int Right, int Fire);
 void InventoryUpdate(Ammunition* Box, bool);
 Ammunition* FullAmmunitionInit();
 Bullet* BulletInit();

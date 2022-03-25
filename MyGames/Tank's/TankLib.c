@@ -19,14 +19,6 @@ void TankMove(Tank* Obj)
 	Obj->Position.y += Obj->Speed.y;
 }
 
-void ObjectInit(Object* Obj, float SpeedX, float SpeedY, float PosX, float PosY, char Type)
-{
-	Obj->Speed.x = SpeedX;
-	Obj->Speed.y = SpeedY;
-	Obj->Position.x = SpeedX;
-	Obj->Position.y = SpeedY;
-	Obj->Type = Type;
-}
 
 void PlayersAction(Tank* Player, Texture2D* Direction, Bullet* Bullet)
 {
@@ -36,114 +28,61 @@ void PlayersAction(Tank* Player, Texture2D* Direction, Bullet* Bullet)
 	static int BulletSpeedY = FIRESPEED;
 	Player->Speed.x = 0;
 	Player->Speed.y = 0;
-	if (Player->Type == '1') 
+	if (Player->Clip == 0)
 	{
-		if (Player->Clip == 0)
+		Player->IndexOfBull = 0;
+		Player->CanShoot = false;
+	}
+	else
+		Player->CanShoot = true;
+	if (IsKeyDown(Player->Move.Up) && Player->Position.y > 0)
+	{
+		Player->Speed.y = -PlayerSpeed;
+		Bullet[Player->IndexOfBull].Direction.y = -BulletSpeedY;
+		Player->Image = Direction[0];
+		Bullet[Player->IndexOfBull].Direction.x = 0;
+	}
+	else if (IsKeyDown(Player->Move.Down) && Player->Position.y < FIELDHEIGHT)
+	{
+		Player->Speed.y = PlayerSpeed;
+		Bullet[Player->IndexOfBull].Direction.y = BulletSpeedY;
+		Bullet[Player->IndexOfBull].Direction.x = 0;
+		Player->Image = Direction[1];
+	}
+	else if (IsKeyDown(Player->Move.Left) && Player->Position.x > 0)
+	{
+		Player->Speed.x = -PlayerSpeed;
+		Bullet[Player->IndexOfBull].Direction.x = -BulletSpeedX;
+		Bullet[Player->IndexOfBull].Direction.y = 0;
+		Player->Image = Direction[2];
+		
+
+	}
+	else if (IsKeyDown(Player->Move.Right) && Player->Position.x < FIELDWIDHT)
+	{
+		Player->Speed.x = PlayerSpeed;
+		Bullet[Player->IndexOfBull].Direction.x = BulletSpeedX;
+		Player->Image = Direction[3];
+		Bullet[Player->IndexOfBull].Direction.y = 0;
+
+	}
+	if (!Bullet[Player->IndexOfBull].Direction.x && !Bullet[Player->IndexOfBull].Direction.y)
+		Bullet[Player->IndexOfBull].Direction.y = -BulletSpeedY;
+	if (IsKeyPressed(Player->Move.Fire) && Player->CanShoot)
+	{
+		Player->Clip--;
+		Bullet[Player->IndexOfBull].IsExist = true;
+		Bullet[Player->IndexOfBull].Position.x = Player->Position.x;
+		Bullet[Player->IndexOfBull].Position.y = Player->Position.y;
+		Player->IndexOfBull++;
+		if (Player->IndexOfBull < NUMOFFULLBULLET)
 		{
-			IndexOfBullFirstPlayer = 0;
-			Player->CanShoot = false;
-		}
-		else
-			Player->CanShoot = true;
-		if (IsKeyDown(KEY_UP) && Player->Position.y > 0)
-		{
-			Player->Speed.y = -PlayerSpeed;
-			Bullet[IndexOfBullFirstPlayer].Direction.y = -BulletSpeedY;
-			Player->Image = Direction[0];
-			Bullet[IndexOfBullFirstPlayer].Direction.x = 0;
-		}
-		else if (IsKeyDown(KEY_DOWN) && Player->Position.y < FIELDHEIGHT)
-		{
-			Player->Speed.y = PlayerSpeed;
-			Bullet[IndexOfBullFirstPlayer].Direction.y = BulletSpeedY;
-			Bullet[IndexOfBullFirstPlayer].Direction.x = 0;
-			Player->Image = Direction[1];
-		}
-		else if (IsKeyDown(KEY_LEFT) && Player->Position.x > 0)
-		{
-			Player->Speed.x = -PlayerSpeed;
-			Bullet[IndexOfBullFirstPlayer].Direction.x = -BulletSpeedX;
-			Bullet[IndexOfBullFirstPlayer].Direction.y = 0;
-			Player->Image = Direction[2];
-		}
-		else if (IsKeyDown(KEY_RIGHT) && Player->Position.x < FIELDWIDHT)
-		{
-			Player->Speed.x = PlayerSpeed;
-			Bullet[IndexOfBullFirstPlayer].Direction.x = BulletSpeedX;
-			Player->Image = Direction[3];
-			Bullet[IndexOfBullFirstPlayer].Direction.y = 0;
-		}
-		if (!Bullet[IndexOfBullFirstPlayer].Direction.x && !Bullet[IndexOfBullFirstPlayer].Direction.y)
-			Bullet[IndexOfBullFirstPlayer].Direction.y = -BulletSpeedY;
-		if (IsKeyPressed(KEY_SPACE) && Player->CanShoot)
-		{
-			Player->Clip--;
-			Bullet[IndexOfBullFirstPlayer].IsExist = true;
-			Bullet[IndexOfBullFirstPlayer].Position.x = Player->Position.x;
-			Bullet[IndexOfBullFirstPlayer].Position.y = Player->Position.y;
-			IndexOfBullFirstPlayer++;
-			if (IndexOfBullFirstPlayer < NUMOFFULLBULLET)
-			{
-				Bullet[IndexOfBullFirstPlayer].Direction.x = Bullet[IndexOfBullFirstPlayer - 1].Direction.x;
-				Bullet[IndexOfBullFirstPlayer].Direction.y = Bullet[IndexOfBullFirstPlayer - 1].Direction.y;
-				Bullet[IndexOfBullFirstPlayer].IsExist = false;
-			}
+			Bullet[Player->IndexOfBull].Direction.x = Bullet[Player->IndexOfBull - 1].Direction.x;
+			Bullet[Player->IndexOfBull].Direction.y = Bullet[Player->IndexOfBull - 1].Direction.y;
+			Bullet[Player->IndexOfBull].IsExist = false;
 		}
 	}
-	else if (Player->Type == '2')
-	{
-		if (Player->Clip == 0)
-		{
-			IndexOfBullFirstPlayer = 0;
-			Player->CanShoot = false;
-		}
-		else
-			Player->CanShoot = true;
-		if (IsKeyDown(KEY_W) && Player->Position.y > 0)
-		{
-			Player->Speed.y = -PlayerSpeed;
-			Bullet[IndexOfBullSecondPlayer].Direction.y = -BulletSpeedY;
-			Player->Image = Direction[0];
-			Bullet[IndexOfBullSecondPlayer].Direction.x = 0;
-		}
-		else if (IsKeyDown(KEY_S) && Player->Position.y < FIELDHEIGHT)
-		{
-			Player->Speed.y = PlayerSpeed;
-			Bullet[IndexOfBullSecondPlayer].Direction.y = BulletSpeedY;
-			Bullet[IndexOfBullSecondPlayer].Direction.x = 0;
-			Player->Image = Direction[1];
-		}
-		else if (IsKeyDown(KEY_A) && Player->Position.x > 0)
-		{
-			Player->Speed.x = -PlayerSpeed;
-			Bullet[IndexOfBullSecondPlayer].Direction.x = -BulletSpeedX;
-			Bullet[IndexOfBullSecondPlayer].Direction.y = 0;
-			Player->Image = Direction[2];
-		}
-		else if (IsKeyDown(KEY_D) && Player->Position.x < FIELDWIDHT)
-		{
-			Player->Speed.x = PlayerSpeed;
-			Bullet[IndexOfBullSecondPlayer].Direction.x = BulletSpeedX;
-			Player->Image = Direction[3];
-			Bullet[IndexOfBullSecondPlayer].Direction.y = 0;
-		}
-		if (!Bullet[IndexOfBullSecondPlayer].Direction.x && !Bullet[IndexOfBullSecondPlayer].Direction.y)
-			Bullet[IndexOfBullSecondPlayer].Direction.y = -BulletSpeedY;
-		if (IsKeyPressed(KEY_ENTER) && Player->CanShoot)
-		{
-			Player->Clip--;
-			Bullet[IndexOfBullSecondPlayer].IsExist = true;
-			Bullet[IndexOfBullSecondPlayer].Position.x = Player->Position.x;
-			Bullet[IndexOfBullSecondPlayer].Position.y = Player->Position.y;
-			IndexOfBullSecondPlayer++;
-			if (IndexOfBullSecondPlayer < NUMOFFULLBULLET)
-			{
-				Bullet[IndexOfBullSecondPlayer].Direction.x = Bullet[IndexOfBullSecondPlayer - 1].Direction.x;
-				Bullet[IndexOfBullSecondPlayer].Direction.y = Bullet[IndexOfBullSecondPlayer - 1].Direction.y;
-				Bullet[IndexOfBullSecondPlayer].IsExist = false;
-			}
-		}
-	}
+
 	BulletFlight(Bullet, *Player, NUMOFFULLBULLET);
 }
 void Recharge(Tank* Player, Ammunition* Box)
@@ -182,7 +121,7 @@ void BulletFlight(Bullet* Bullet, Tank Player, int Num)
 		}
 	}
 }
-Tank PlayerInit(int X, int Y, char Type, char* File, float SizeX, float SizeY)
+Tank PlayerInit(int X, int Y, char Type, char* File, float SizeX, float SizeY, int Up, int Down, int Left, int Right, int Fire)
 {
 	Tank Player = { 0 };
 	Player.Position = (Vector2){ (float)X, (float)Y };
@@ -193,6 +132,11 @@ Tank PlayerInit(int X, int Y, char Type, char* File, float SizeX, float SizeY)
 	Player.Type = Type;
 	Player.CanShoot = true;
 	Player.CanMove = true;
+	Player.Move.Up = Up;
+	Player.Move.Down = Down;
+	Player.Move.Left = Left;
+	Player.Move.Right = Right;
+	Player.Move.Fire = Fire;
 	Player.Clip = NUMOFFULLBULLET;
 	Player.Image = LoadTexture(File);
 	Player.HP = 5;
@@ -238,10 +182,7 @@ void ContactWithAmmunation(Tank* Player, Ammunition* Box)
 		{
 			Player->Clip = 20;
 			Box[i].IsExist = false;
-			if (Player->Type == '1')
-				IndexOfBullFirstPlayer = 0;
-			else if (Player->Type == '2')
-				IndexOfBullSecondPlayer = 0;
+			Player->IndexOfBull = 0;
 			NumOfBoxInField--;
 		}
 	}

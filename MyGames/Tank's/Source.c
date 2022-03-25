@@ -15,8 +15,8 @@ int main()
 	Texture2D Background = LoadTexture("textures\\Field.png");
 	Vector2 FieldPosition = { (float)((ScreenWidth / 2) - (Background.width / 2)),(float)((ScreenHeight / 2) - (Background.height) / 2) };
 	static int CountOfAmmunition = 0;
-	Tank PlayerOne = PlayerInit(900,10,'1', "textures\\TankUp.png", 125, 120);
-	Tank PlayerTwo = PlayerInit(20,10,'2', "enemy\\TankUp.png", 58,56);
+	Tank PlayerOne = PlayerInit(900,10,'1', "textures\\TankUp.png", 125, 120, KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_ENTER);
+	Tank PlayerTwo = PlayerInit(20,10,'2', "enemy\\TankUp.png", 58,56, KEY_W, KEY_S, KEY_A, KEY_D, KEY_SPACE);
 	Ammunition* Box = FullAmmunitionInit();
 	Texture2D DirOfFirst[4];
 	Texture2D DirOfSecond[4];

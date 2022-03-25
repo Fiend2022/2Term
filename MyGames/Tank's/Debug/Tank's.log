@@ -1,3 +1,18 @@
 ﻿  Source.c
 C:\Term2\MyGames\Tank's\Source.c(14,18): warning C4244: функция: преобразование "time_t" в "unsigned int", возможна потеря данных
+  TankLib.c
+C:\Term2\MyGames\Tank's\TankLib.c(40,33): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(41,58): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(47,32): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(48,57): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(54,33): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(55,58): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(63,32): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(64,57): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(70,58): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(112,73): warning C4244: функция: преобразование "float" в "int", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(112,115): warning C4244: функция: преобразование "float" в "int", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(157,37): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(158,37): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+  Создание кода...
   Tank's.vcxproj -> C:\Term2\MyGames\Debug\Tank's.exe
