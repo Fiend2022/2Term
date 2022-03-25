@@ -7,7 +7,7 @@
 int NumOfBoxInField = 0;
 
 
-void ObjectMove(Bullet* Obj)
+void BulletMove(Bullet* Obj)
 {
 	Obj->Position.x += Obj->Direction.x;
 	Obj->Position.y += Obj->Direction.y;
@@ -52,7 +52,7 @@ void PlayersAction(Tank* Player, Texture2D* Direction, Bullet* Bullet)
 			Player->Image = Direction[0];
 			Bullet[IndexOfBullFirstPlayer].Direction.x = 0;
 		}
-		else if (IsKeyDown(KEY_DOWN) && Player->Position.y < 600)
+		else if (IsKeyDown(KEY_DOWN) && Player->Position.y < FIELDHEIGHT)
 		{
 			Player->Speed.y = PlayerSpeed;
 			Bullet[IndexOfBullFirstPlayer].Direction.y = BulletSpeedY;
@@ -66,7 +66,7 @@ void PlayersAction(Tank* Player, Texture2D* Direction, Bullet* Bullet)
 			Bullet[IndexOfBullFirstPlayer].Direction.y = 0;
 			Player->Image = Direction[2];
 		}
-		else if (IsKeyDown(KEY_RIGHT) && Player->Position.x < 850)
+		else if (IsKeyDown(KEY_RIGHT) && Player->Position.x < FIELDWIDHT)
 		{
 			Player->Speed.x = PlayerSpeed;
 			Bullet[IndexOfBullFirstPlayer].Direction.x = BulletSpeedX;
@@ -106,7 +106,7 @@ void PlayersAction(Tank* Player, Texture2D* Direction, Bullet* Bullet)
 			Player->Image = Direction[0];
 			Bullet[IndexOfBullSecondPlayer].Direction.x = 0;
 		}
-		else if (IsKeyDown(KEY_S) && Player->Position.y < 800)
+		else if (IsKeyDown(KEY_S) && Player->Position.y < FIELDHEIGHT)
 		{
 			Player->Speed.y = PlayerSpeed;
 			Bullet[IndexOfBullSecondPlayer].Direction.y = BulletSpeedY;
@@ -120,7 +120,7 @@ void PlayersAction(Tank* Player, Texture2D* Direction, Bullet* Bullet)
 			Bullet[IndexOfBullSecondPlayer].Direction.y = 0;
 			Player->Image = Direction[2];
 		}
-		else if (IsKeyDown(KEY_D) && Player->Position.x < 850)
+		else if (IsKeyDown(KEY_D) && Player->Position.x < FIELDWIDHT)
 		{
 			Player->Speed.x = PlayerSpeed;
 			Bullet[IndexOfBullSecondPlayer].Direction.x = BulletSpeedX;
@@ -144,7 +144,7 @@ void PlayersAction(Tank* Player, Texture2D* Direction, Bullet* Bullet)
 			}
 		}
 	}
-	BulletMove(Bullet, *Player, NUMOFFULLBULLET);
+	BulletFlight(Bullet, *Player, NUMOFFULLBULLET);
 }
 void Recharge(Tank* Player, Ammunition* Box)
 {
@@ -163,14 +163,14 @@ void Recharge(Tank* Player, Ammunition* Box)
 			DrawTextureV(Box[i].Image, Box[i].Position, WHITE);
 	}
 }
-void BulletMove(Bullet* Bullet, Tank Player, int Num)
+void BulletFlight(Bullet* Bullet, Tank Player, int Num)
 {
 	for (int i = 0; i < Num;i++)
 	{
 		if (Bullet[i].IsExist)
 		{
-			ObjectMove(&Bullet[i]);
-			DrawTexture(Bullet[i].Image, Bullet[i].Position.x + (Player.Size.x), Bullet[i].Position.y + (Player.Size.y), WHITE);
+			BulletMove(&Bullet[i]);
+			DrawTexture(Bullet[i].Image, Bullet[i].Position.x + (Player.Size.x)/2, Bullet[i].Position.y + (Player.Size.y)/2, WHITE);
 		}
 		if (Bullet[i].Position.x > SCREENWIDHT || Bullet[i].Position.y > SCREENHEIGHT || Bullet[i].Position.x < 0 || Bullet[i].Position.y < 0)
 		{
@@ -182,12 +182,12 @@ void BulletMove(Bullet* Bullet, Tank Player, int Num)
 		}
 	}
 }
-Tank PlayerInit(int X, int Y, char Type, char* File)
+Tank PlayerInit(int X, int Y, char Type, char* File, float SizeX, float SizeY)
 {
 	Tank Player = { 0 };
 	Player.Position = (Vector2){ (float)X, (float)Y };
-	Player.Size.x = 58;
-	Player.Size.y = 56;
+	Player.Size.x = SizeX;
+	Player.Size.y = SizeY;
 	Player.Speed.x = TANKSPEED;
 	Player.Speed.y = TANKSPEED;
 	Player.Type = Type;

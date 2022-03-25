@@ -1,1 +1,2 @@
 C:\Users\Илья\source\repos\MyGames\Tank's\Debug\Tank's.vcxproj.CopyComplete
+C:\Term2\MyGames\Tank's\Debug\Tank's.vcxproj.CopyComplete

@@ -1,0 +1,5 @@
+﻿  Source.c
+C:\Term2\MyGames\Tank's\Source.c(1,10): fatal error C1083: Не удается открыть файл включение: raylib.h: No such file or directory,
+  TankLib.c
+C:\Term2\MyGames\Tank's\TankLib.c(1,10): fatal error C1083: Не удается открыть файл включение: raylib.h: No such file or directory,
+  Создание кода...
