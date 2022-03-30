@@ -5,8 +5,6 @@
 #include <time.h>
 #include "TankLib.h"
 int NumOfBoxInField = 0;
-
-
 void BulletMove(Bullet* Obj)
 {
 	Obj->Position.x += Obj->Direction.x;
@@ -18,14 +16,34 @@ void TankMove(Tank* Obj)
 	Obj->Position.x += Obj->Speed.x;
 	Obj->Position.y += Obj->Speed.y;
 }
-
-
+void static Move(Tank* Player, Texture2D* Dir, Bullet* Bullet,int PlayerSpeedX, int PlayerSpeedY, int BullSpeedX, int BullSpeedY, int IndexDirPlayer)
+{
+	Player->Speed.x = PlayerSpeedX;
+	Player->Speed.y = PlayerSpeedY;
+	Bullet[Player->IndexOfBull].Direction.y = BullSpeedY;
+	Player->Image = Dir[IndexDirPlayer];
+	Bullet[Player->IndexOfBull].Direction.x = BullSpeedX;
+	Player->Size.x = Dir[IndexDirPlayer].width;
+	Player->Size.y = Dir[IndexDirPlayer].height;
+}
+void Magazine(Tank* Player, Bullet* Bull)
+{
+	Player->Clip--;
+	Bull[Player->IndexOfBull].IsExist = true;
+	Bull[Player->IndexOfBull].Position.x = Player->Position.x;
+	Bull[Player->IndexOfBull].Position.y = Player->Position.y;
+	Player->IndexOfBull++;
+	if (Player->IndexOfBull < NUMOFFULLBULLET)
+	{
+		Bull[Player->IndexOfBull].Direction.x = Bull[Player->IndexOfBull - 1].Direction.x;
+		Bull[Player->IndexOfBull].Direction.y = Bull[Player->IndexOfBull - 1].Direction.y;
+		Bull[Player->IndexOfBull].IsExist = false;
+	}
+}
 void PlayersAction(Tank* Player, Texture2D* Direction, Bullet* Bullet)
 {
-	Player->CanShoot = true;
-	static int PlayerSpeed = TANKSPEED;
-	static int BulletSpeedX = FIRESPEED;
-	static int BulletSpeedY = FIRESPEED;
+	int PlayerSpeed = TANKSPEED;
+	int BulletSpeed = FIRESPEED;
 	Player->Speed.x = 0;
 	Player->Speed.y = 0;
 	if (Player->Clip == 0)
@@ -36,53 +54,17 @@ void PlayersAction(Tank* Player, Texture2D* Direction, Bullet* Bullet)
 	else
 		Player->CanShoot = true;
 	if (IsKeyDown(Player->Move.Up) && Player->Position.y > 0)
-	{
-		Player->Speed.y = -PlayerSpeed;
-		Bullet[Player->IndexOfBull].Direction.y = -BulletSpeedY;
-		Player->Image = Direction[0];
-		Bullet[Player->IndexOfBull].Direction.x = 0;
-	}
+		Move(Player, Direction, Bullet, 0, -PlayerSpeed, 0, -BulletSpeed, 0);
 	else if (IsKeyDown(Player->Move.Down) && Player->Position.y < FIELDHEIGHT)
-	{
-		Player->Speed.y = PlayerSpeed;
-		Bullet[Player->IndexOfBull].Direction.y = BulletSpeedY;
-		Bullet[Player->IndexOfBull].Direction.x = 0;
-		Player->Image = Direction[1];
-	}
+		Move(Player, Direction, Bullet, 0, PlayerSpeed, 0, BulletSpeed, 1);
 	else if (IsKeyDown(Player->Move.Left) && Player->Position.x > 0)
-	{
-		Player->Speed.x = -PlayerSpeed;
-		Bullet[Player->IndexOfBull].Direction.x = -BulletSpeedX;
-		Bullet[Player->IndexOfBull].Direction.y = 0;
-		Player->Image = Direction[2];
-		
-
-	}
+		Move(Player, Direction, Bullet, -PlayerSpeed, 0, -BulletSpeed, 0, 2);
 	else if (IsKeyDown(Player->Move.Right) && Player->Position.x < FIELDWIDHT)
-	{
-		Player->Speed.x = PlayerSpeed;
-		Bullet[Player->IndexOfBull].Direction.x = BulletSpeedX;
-		Player->Image = Direction[3];
-		Bullet[Player->IndexOfBull].Direction.y = 0;
-
-	}
+		Move(Player, Direction, Bullet, PlayerSpeed, 0, BulletSpeed, 0, 3);
 	if (!Bullet[Player->IndexOfBull].Direction.x && !Bullet[Player->IndexOfBull].Direction.y)
-		Bullet[Player->IndexOfBull].Direction.y = -BulletSpeedY;
+		Bullet[Player->IndexOfBull].Direction.y = -BulletSpeed;
 	if (IsKeyPressed(Player->Move.Fire) && Player->CanShoot)
-	{
-		Player->Clip--;
-		Bullet[Player->IndexOfBull].IsExist = true;
-		Bullet[Player->IndexOfBull].Position.x = Player->Position.x;
-		Bullet[Player->IndexOfBull].Position.y = Player->Position.y;
-		Player->IndexOfBull++;
-		if (Player->IndexOfBull < NUMOFFULLBULLET)
-		{
-			Bullet[Player->IndexOfBull].Direction.x = Bullet[Player->IndexOfBull - 1].Direction.x;
-			Bullet[Player->IndexOfBull].Direction.y = Bullet[Player->IndexOfBull - 1].Direction.y;
-			Bullet[Player->IndexOfBull].IsExist = false;
-		}
-	}
-
+		Magazine(Player, Bullet);
 	BulletFlight(Bullet, *Player, NUMOFFULLBULLET);
 }
 void Recharge(Tank* Player, Ammunition* Box)
@@ -139,7 +121,7 @@ Tank PlayerInit(int X, int Y, char Type, char* File, float SizeX, float SizeY, i
 	Player.Move.Fire = Fire;
 	Player.Clip = NUMOFFULLBULLET;
 	Player.Image = LoadTexture(File);
-	Player.HP = 5;
+	Player.HP = HEALTH;
 	return Player;
 }
 Ammunition* FullAmmunitionInit()
@@ -169,6 +151,8 @@ Bullet* BulletInit()
 		Bullet[i].IsExist = false;
 		Bullet[i].Direction.x = 0;
 		Bullet[i].Direction.y = 0;
+		Bullet[i].Size.x =  20;
+		Bullet[i].Size.y = 20;
 	}
 	return Bullet;
 }
@@ -187,13 +171,32 @@ void ContactWithAmmunation(Tank* Player, Ammunition* Box)
 		}
 	}
 }
-void PlayersLife(Tank* Player, Bullet* Bullet, Texture2D* Dir, Ammunition* Box)
+void PlayersLife(Tank* Player, Bullet* Bullet, struct Bullet* EnemyClip,Texture2D* Dir, Ammunition* Box, Sound Boom)
 {
 	if (Player->CanMove)
 	{
 		PlayersAction(Player, Dir, Bullet);
 		TankMove(Player);
 		DrawTextureV(Player->Image, Player->Position, WHITE);
+		Killing(Player, EnemyClip,Boom);
+		ContactWithAmmunation(Player, Box);
 	}
-	ContactWithAmmunation(Player, Box);
+}
+void Killing(Tank* Player, Bullet* EnemysClip, Sound Boom)
+{
+	for(int i = 0; i<NUMOFFULLBULLET;i++)
+		if ((EnemysClip[i].Position.x < (Player->Position.x + Player->Size.x/2) && (EnemysClip[i].Position.x + EnemysClip[i].Size.x) > Player->Position.x) &&
+			(EnemysClip[i].Position.y < (Player->Position.y + Player->Size.y/2) && (EnemysClip[i].Position.y + EnemysClip[i].Size.y) > Player->Position.y) &&
+			(EnemysClip[i].IsExist))
+		{
+			Player->HP--;
+			EnemysClip[i].IsExist = false;
+			if (Player->HP == 0)
+			{
+				Player->CanMove = false;
+				PlaySound(Boom);
+				Player->Clip = 0;
+				break;
+			}
+		}
 }

@@ -1,10 +1,6 @@
 #pragma once
-
 #include "raylib.h"
 #include "raymath.h"
-
-
-
 #define TANKSPEED 4
 #define FIRESPEED 10
 #define NUMOFFULLBULLET 20
@@ -14,8 +10,7 @@
 #define SCREENHEIGHT 750
 #define FIELDWIDHT 900
 #define FIELDHEIGHT 600
-#define HEALTH 5
-
+#define HEALTH 10
 typedef struct KEY_MOVE
 {
 	int Up;
@@ -46,6 +41,7 @@ typedef struct Bullet
 	Vector2 Direction;
 	Texture2D Image;
 	bool IsExist;
+	Vector2 Size;
 } Bullet;
 
 typedef struct Ammunition
@@ -65,6 +61,5 @@ Tank PlayerInit(int X, int Y, char Type, char* File, float, float, int Up, int D
 void InventoryUpdate(Ammunition* Box, bool);
 Ammunition* FullAmmunitionInit();
 Bullet* BulletInit();
-void PlayersLife(Tank* Player, Bullet* Bullet, Texture2D* Dir, Ammunition* Box);
-
-
+void PlayersLife(Tank* Player, Bullet* Bullet, struct Bullet* EnemysClip, Texture2D* Dir, Ammunition* Box, Sound);
+void Killing(Tank* Player, Bullet* EnemysClip, Sound);

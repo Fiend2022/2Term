@@ -1,0 +1,6 @@
+﻿Source.obj : error LNK2001: неразрешенный внешний символ __imp__srand.
+Source.obj : error LNK2001: неразрешенный внешний символ __imp___time64.
+TankLib.obj : error LNK2001: неразрешенный внешний символ __imp__calloc.
+TankLib.obj : error LNK2001: неразрешенный внешний символ __imp__rand.
+TankLib.obj : error LNK2001: неразрешенный внешний символ __imp__malloc.
+C:\Term2\MyGames\Release\Tank's.exe : fatal error LNK1120: неразрешенных внешних элементов: 5
