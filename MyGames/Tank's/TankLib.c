@@ -151,7 +151,7 @@ Bullet* BulletInit()
 		Bullet[i].IsExist = false;
 		Bullet[i].Direction.x = 0;
 		Bullet[i].Direction.y = 0;
-		Bullet[i].Size.x =  20;
+		Bullet[i].Size.x = 20;
 		Bullet[i].Size.y = 20;
 	}
 	return Bullet;

@@ -1,4 +1,22 @@
-﻿Source.obj : error LNK2001: неразрешенный внешний символ __imp__srand.
+﻿  Source.c
+C:\Term2\MyGames\Tank's\Source.c(13,83): warning C4244: функция: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\Source.c(13,106): warning C4244: функция: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\Source.c(14,80): warning C4244: функция: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\Source.c(14,103): warning C4244: функция: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\Source.c(23,18): warning C4244: функция: преобразование "time_t" в "unsigned int", возможна потеря данных
+  TankLib.c
+C:\Term2\MyGames\Tank's\TankLib.c(21,32): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(22,32): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(23,54): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(25,54): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(26,44): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(27,45): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(65,57): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(94,73): warning C4244: функция: преобразование "float" в "int", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(94,115): warning C4244: функция: преобразование "float" в "int", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(139,37): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Term2\MyGames\Tank's\TankLib.c(140,37): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+Source.obj : error LNK2001: неразрешенный внешний символ __imp__srand.
 Source.obj : error LNK2001: неразрешенный внешний символ __imp___time64.
 TankLib.obj : error LNK2001: неразрешенный внешний символ __imp__calloc.
 TankLib.obj : error LNK2001: неразрешенный внешний символ __imp__rand.

@@ -15,8 +15,7 @@ void InitBeginGame(Tank* PlayerOne, Tank* PlayerTwo)
 }
 
 int main()
-{
-	const int ScreenWidth = 1000;
+{	const int ScreenWidth = 1000;
 	const int ScreenHeight = 750;
 	InitWindow(ScreenWidth, ScreenHeight, "Tanks");
 	InitAudioDevice();
@@ -34,6 +33,8 @@ int main()
 	DirOfSecond[2] = LoadTexture("enemy\\TankLeft.png");
 	DirOfSecond[3] = LoadTexture("enemy\\TankRight.png");
 	Bullet* BulletOfPlayerOne, * BulletOfPlayerTwo;
+	BulletOfPlayerOne = (Bullet*)malloc(sizeof(Bullet)*NUMOFFULLBULLET);
+	BulletOfPlayerTwo = (Bullet*)malloc(sizeof(Bullet) * NUMOFFULLBULLET);
 	BulletOfPlayerOne = BulletInit();
 	BulletOfPlayerTwo = BulletInit();
 	Tank PlayerOne, PlayerTwo;
@@ -52,11 +53,15 @@ int main()
 			PlayersLife(&PlayerTwo, BulletOfPlayerTwo, BulletOfPlayerOne, DirOfSecond, Box, Boom);
 			if (!PlayerOne.CanMove || !PlayerTwo.CanMove)
 			{
+				free(BulletOfPlayerOne);
+				free(BulletOfPlayerTwo);
 				InitBeginGame(&PlayerOne, &PlayerTwo);
 				BulletOfPlayerOne = BulletInit();
 				BulletOfPlayerTwo = BulletInit();
 			}
  		EndDrawing();
 	}
+	free(BulletOfPlayerOne);
+	free(BulletOfPlayerTwo);
 	CloseWindow();
 }
