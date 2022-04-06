@@ -1,5 +1,5 @@
 ﻿  Sourse.c
-C:\Term2\07.04.2022\Fractal\Sourse.c(40,30): warning C4305: /=: усечение из "double" в "float"
-C:\Term2\07.04.2022\Fractal\Sourse.c(41,34): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Term2\07.04.2022\Fractal\Sourse.c(82,30): warning C4305: /=: усечение из "double" в "float"
+C:\Term2\07.04.2022\Fractal\Sourse.c(48,30): warning C4305: /=: усечение из "double" в "float"
+C:\Term2\07.04.2022\Fractal\Sourse.c(49,34): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Term2\07.04.2022\Fractal\Sourse.c(84,30): warning C4305: /=: усечение из "double" в "float"
   Fractal.vcxproj -> C:\Term2\07.04.2022\Debug\Fractal.exe
