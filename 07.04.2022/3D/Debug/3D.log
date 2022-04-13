@@ -1,7 +1,0 @@
-﻿  Source.cpp
-C:\Term2\07.04.2022\3D\Source.cpp(34,1): warning C4305: =: усечение из "double" в "float"
-C:\Term2\07.04.2022\3D\Source.cpp(81,37): warning C4244: -=: преобразование "double" в "float", возможна потеря данных
-C:\Term2\07.04.2022\3D\Source.cpp(83,37): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
-C:\Term2\07.04.2022\3D\Source.cpp(88,49): warning C4244: аргумент: преобразование "float" в "const unsigned int", возможна потеря данных
-C:\Term2\07.04.2022\3D\Source.cpp(98,49): warning C4244: аргумент: преобразование "float" в "const unsigned int", возможна потеря данных
-  3D.vcxproj -> C:\Term2\07.04.2022\Debug\3D.exe

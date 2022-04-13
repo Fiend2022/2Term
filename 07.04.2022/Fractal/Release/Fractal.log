@@ -1,0 +1,9 @@
+﻿  Sourse.c
+C:\Term2\07.04.2022\Fractal\Sourse.c(48,30): warning C4305: /=: усечение из "double" в "float"
+C:\Term2\07.04.2022\Fractal\Sourse.c(49,34): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Term2\07.04.2022\Fractal\Sourse.c(84,30): warning C4305: /=: усечение из "double" в "float"
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 5 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  Fractal.vcxproj -> C:\Term2\07.04.2022\Release\Fractal.exe

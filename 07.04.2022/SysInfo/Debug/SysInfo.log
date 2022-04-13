@@ -1,0 +1,7 @@
+﻿  Source.c
+C:\Term2\07.04.2022\SysInfo\Source.c(24,24): warning C4133: функция: несовместимые типы - из "char [256]" в "LPWSTR"
+C:\Term2\07.04.2022\SysInfo\Source.c(32,29): warning C4133: функция: несовместимые типы - из "char [256]" в "LPCWSTR"
+C:\Term2\07.04.2022\SysInfo\Source.c(32,129): warning C4047: функция: "PDWORD" отличается по уровням косвенного обращения от "PDWORD *"
+C:\Term2\07.04.2022\SysInfo\Source.c(32,115): warning C4024: NetUserEnum: различные типы для формального и фактического параметров 8
+C:\Term2\07.04.2022\SysInfo\Source.c(35,21): warning C4018: <: несоответствие типов со знаком и без знака
+  SysInfo.vcxproj -> C:\Term2\07.04.2022\Debug\SysInfo.exe

@@ -22,7 +22,6 @@ int main()
 	line Tree;
 	InitWindow(WIDTH, HEIGHT, "Fractal's wood");
 	static int FPS = 10;
-	SetTargetFPS(FPS);
 	while (!WindowShouldClose())
 	{
 		SetTargetFPS(FPS);
@@ -30,10 +29,10 @@ int main()
 			SymIteration = 0;
 		++SymIteration;
 		BeginDrawing();
-		if (IsKeyDown(KEY_UP) && FPS <60)
-			FPS++;
-		else if (IsKeyDown(KEY_DOWN)&& FPS >5)
-			FPS--;
+			if (IsKeyDown(KEY_UP) && FPS <60)
+				FPS++;
+			else if (IsKeyDown(KEY_DOWN)&& FPS >5)
+				FPS--;
 			ClearBackground(WHITE);
 			TreeInit(&Tree);
 			DrawTree(Tree, 1,1);

@@ -1,0 +1,13 @@
+﻿  SysInfo.c
+C:\Term2\14.04.2022\SysInfo\SysInfo.c(57,53): warning C4047: функция: "LPWSTR" отличается по уровням косвенного обращения от "wchar_t *[256]"
+C:\Term2\14.04.2022\SysInfo\SysInfo.c(57,50): warning C4024: ExpandEnvironmentStringsW: различные типы для формального и фактического параметров 2
+C:\Term2\14.04.2022\SysInfo\SysInfo.c(58,10): warning C4477: "printf": в строке форматирования "%ws" требуется аргумент типа "unsigned short *", но вариативный аргумент "1" имеет тип "wchar_t **"
+C:\Term2\14.04.2022\SysInfo\SysInfo.c(68,2): error C4996: '_strdate': This function or variable may be unsafe. Consider using _strdate_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Term2\14.04.2022\SysInfo\SysInfo.c(69,2): error C4996: '_strtime': This function or variable may be unsafe. Consider using _strtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Term2\14.04.2022\SysInfo\SysInfo.c(82,132): warning C4047: функция: "PDWORD" отличается по уровням косвенного обращения от "PDWORD *"
+C:\Term2\14.04.2022\SysInfo\SysInfo.c(82,118): warning C4024: NetUserEnum: различные типы для формального и фактического параметров 8
+C:\Term2\14.04.2022\SysInfo\SysInfo.c(84,14): warning C4047: return: "int" отличается по уровням косвенного обращения от "void *"
+C:\Term2\14.04.2022\SysInfo\SysInfo.c(90,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Term2\14.04.2022\SysInfo\SysInfo.c(93,84): warning C4047: функция: "LPBYTE *" отличается по уровням косвенного обращения от "LPBYTE"
+C:\Term2\14.04.2022\SysInfo\SysInfo.c(93,75): warning C4024: NetUserGetInfo: различные типы для формального и фактического параметров 4
+C:\Term2\14.04.2022\SysInfo\SysInfo.c(105,15): warning C4047: return: "int" отличается по уровням косвенного обращения от "void *"

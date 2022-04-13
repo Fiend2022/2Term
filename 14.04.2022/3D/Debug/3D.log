@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\Term2\14.04.2022\3D\Source.cpp(40,1): warning C4305: =: усечение из "double" в "float"
+C:\Term2\14.04.2022\3D\Source.cpp(149,27): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+  3D.vcxproj -> C:\Term2\14.04.2022\Debug\3D.exe
