@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tank's", "Tank's\Tank's.vcxproj", "{38B65733-FA64-4912-B59F-798413855763}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Flappy Darby", "Flappy Darby\Flappy Darby.vcxproj", "{537ED04F-3DCB-4477-B205-23C10D9B790A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{38B65733-FA64-4912-B59F-798413855763}.Release|x64.Build.0 = Release|x64
 		{38B65733-FA64-4912-B59F-798413855763}.Release|x86.ActiveCfg = Release|Win32
 		{38B65733-FA64-4912-B59F-798413855763}.Release|x86.Build.0 = Release|Win32
+		{537ED04F-3DCB-4477-B205-23C10D9B790A}.Debug|x64.ActiveCfg = Debug|x64
+		{537ED04F-3DCB-4477-B205-23C10D9B790A}.Debug|x64.Build.0 = Debug|x64
+		{537ED04F-3DCB-4477-B205-23C10D9B790A}.Debug|x86.ActiveCfg = Debug|Win32
+		{537ED04F-3DCB-4477-B205-23C10D9B790A}.Debug|x86.Build.0 = Debug|Win32
+		{537ED04F-3DCB-4477-B205-23C10D9B790A}.Release|x64.ActiveCfg = Release|x64
+		{537ED04F-3DCB-4477-B205-23C10D9B790A}.Release|x64.Build.0 = Release|x64
+		{537ED04F-3DCB-4477-B205-23C10D9B790A}.Release|x86.ActiveCfg = Release|Win32
+		{537ED04F-3DCB-4477-B205-23C10D9B790A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

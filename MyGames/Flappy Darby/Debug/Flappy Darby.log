@@ -1,0 +1,4 @@
+﻿  Source.c
+C:\Term2\MyGames\Flappy Darby\Source.c(82,14): warning C4101: myClass: неиспользованная локальная переменная
+C:\Term2\MyGames\Flappy Darby\Source.c(60): warning C4715: wndProcessor: значение возвращается не при всех путях выполнения
+  Flappy Darby.vcxproj -> C:\Term2\MyGames\Debug\Flappy Darby.exe
